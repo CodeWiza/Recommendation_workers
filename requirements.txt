@@ -7,3 +7,4 @@ loguru
 streamlit
 chromadb
 pysqlite3-binary
+llama-index-llms-clarifai
