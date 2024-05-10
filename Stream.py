@@ -5,19 +5,10 @@ from crewai import Agent, Task, Crew, Process
 from crewai_tools import SerperDevTool, WebsiteSearchTool
 import json
 import asyncio
-import re
-from bs4 import BeautifulSoup
-import yfinance as yf
-import re
-from scrapegraphai.graphs import SmartScraperGraph
 from llama_index.llms.clarifai import Clarifai
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_community.chat_models import ChatCohere
 from langchain_openai import ChatOpenAI
-import streamlit as st
-from loguru import logger as log
-from streamlit_option_menu import option_menu
-
 load_dotenv()
 
 def set_api_keys():
