@@ -6,3 +6,4 @@ llama_index
 loguru
 streamlit
 chromadb
+pysqlite3-binary
