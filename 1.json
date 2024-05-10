@@ -1,0 +1,36 @@
+{
+    "1.Introducation of product": "Stainless steel is a green product. It is 100% recyclable, as it is not coated with any toxic material it does not produce toxic run-off. A significant part of stainless steel production comes from the recycled raw materials. Stainless steel contributes to a sustainable society and longevity.",
+    "2.Overview of product": "Stainless steel is an alloy of Iron with a minimum of 10.5% Chromium. Chromium produces a thin layer of oxide on the surface of the steel known as the 'passive layer'. This prevents any further corrosion of the surface. Increasing the amount of Chromium gives an increased resistance to corrosion. Stainless steel also contains varying amounts of Carbon, Silicon, and Manganese. Other elements such as Nickel and Molybdenum may be added to impart other useful properties such as enhanced formability and increased corrosion resistance.",
+    "3.Top suppliers in Russia": [
+        {
+            "Company_name": "Severstal",
+            "Company_websitelink": "https://www.severstal.com/eng/",
+            "company_country": "Russia",
+            "summary": "Severstal is one of the largest companies in the Russian steel market with assets in Russia, Ukraine, Latvia, Poland, Italy, and Liberia.",
+            "product offerings": "The company offers a wide range of products and services.",
+            "Reviews": "Severstal has a 3.7-star rating out of 5 on Glassdoor",
+            "Email": "info@severstal.com",
+            "Phone_number": "+7 (495) 926-77-66"
+        },
+        {
+            "Company_name": "Novolipetsk Steel (NLMK)",
+            "Company_websitelink": "https://nlmk.com/en/",
+            "company_country": "Russia",
+            "summary": "Novolipetsk Steel is one of the four largest steel companies in Russia with a 21% share of domestic crude steel production.",
+            "product offerings": "They produce steel, long products, steel plate, steel coil, and have a wide range of steel products.",
+            "Email": "info@nlmk.com",
+            "Phone_number": "+7 (4742) 44 64 04"
+        },
+        {
+            "Company_name": "Magnitogorsk Iron and Steel Works (MMK)",
+            "Company_websitelink": "https://eng.mmk.ru/",
+            "company_country": "Russia",
+            "summary": "Magnitogorsk Iron and Steel Works is the third largest steel company in Russia. The company focuses on the production of steel products such as long products, flat products, and downstream products.",
+            "reviews": "Magnitogorsk Iron and Steel Works (MMK) has a 3.9-star rating out of 5 on Glassdoor",
+            "Email": "mmk@mmk.ru",
+            "Phone_number": "+7 (3519) 24-52-97"
+        }
+    ],
+    "4.Conculsion": "Severstal, Novolipetsk Steel (NLMK), and Magnitogorsk Iron and Steel Works (MMK) are the top stainless steel suppliers in Russia. They are all well-established and have a wide range of products. However, it is advisable to contact them directly for specific product offerings and further details.",
+    "5.Reference": "https://www.worldstainless.org, https://www.steelorbis.com, https://www.severstal.com/eng/, https://nlmk.com/en/, https://eng.mmk.ru/, https://www.indeed.com, https://www.glassdoor.com, https://www.bloomberg.com"
+}
