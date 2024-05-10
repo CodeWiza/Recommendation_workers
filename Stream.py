@@ -18,7 +18,6 @@ import streamlit as st
 from loguru import logger as log
 from streamlit_option_menu import option_menu
 
-from style import CSS
 load_dotenv()
 
 def set_api_keys():
