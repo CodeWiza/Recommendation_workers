@@ -16,7 +16,6 @@ from langchain_community.chat_models import ChatCohere
 from langchain_openai import ChatOpenAI
 import streamlit as st
 from loguru import logger as log
-from streamlit_option_menu import option_menu
 from llama_index.program.openai import OpenAIPydanticProgram
 from llama_index.core import ChatPromptTemplate
 from llama_index.core.llms import ChatMessage
