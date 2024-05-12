@@ -493,7 +493,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 recco = []
-st.title("Recommendation-Bot")
+st.title("Supplier discovery")
 # React to user input
 if prompt := st.chat_input("What is up?"):
     # Display user message in chat message container
