@@ -38,13 +38,14 @@ web_rag_tool = WebsiteSearchTool()
 
 
 def create_search_agent():
-
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
     return Agent(
         role='Researcher',
         goal='Conduct foundational research of product {topic} and specified country {topic} and company must be public-government sector if list not full fill then search top private company also and strict find Review, email, phone-number',
         backstory="""You a top skilled researcher and can easily find company name of product and list all of them in form of list and return JSON file as having heading like 1.Introducation of product 2.Overview of product 3. Top supplier in India according to number user Asked and return Company_name, Company_websitelink, company_country ,summary,product offerings(company all product details),Reviews, Email(atleast 2 emails-ids), Phone_number about company 4.Conculsion and 5.Reference. Very Important details needed => Reviews, Email(atleast 2 emails-ids), Phone_number about company """,
         verbose=True,
         allow_delegation=False,
+        llm = llm,
         tools=[search_tool, web_rag_tool],
         async_execution=True
     )
@@ -60,6 +61,7 @@ def run_search_task(agent, result):
         agents=[agent],
         tasks=[Search_task],
         verbose=10,
+        manager_llm=llm,
         process=Process.sequential,
         full_output=True
     )
