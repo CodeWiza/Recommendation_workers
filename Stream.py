@@ -52,6 +52,7 @@ def create_search_agent():
 
 
 def run_search_task(agent, result):
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
     Search_task = Task(
         description=("Gather relevant data of product and company."),
         expected_output='Gather relevant data and list all of them in form of list and return JSON file as having heading like these strict 1.Introducation of product 2.Overview of product 3.Top suppliers according to number user Asked and return Company_name, Company_websitelink, company_country ,summary,product offerings(company all product details),Reviews, Email, Phone_number about company 4.Conculsion and 5.Reference . Return all points in Json type and accurate and beautiful view and heading for each json should be same no spacing noting strict write json points ',
