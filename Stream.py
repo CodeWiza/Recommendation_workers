@@ -421,25 +421,25 @@ def display_company_finance_details(company_json):
     if "Financial Information" in company_data:
         st.subheader("Financial Information")
         financial_info = company_data["Financial Information"]
-        st.write(financial_info)
+        st.json(financial_info)
 
     # Display positives
     if "Positives" in company_data:
         st.subheader("Positives")
         positives = company_data["Positives"]
-        st.write(positives)
+        st.json(positives)
 
     # Display key concerns
     if "Key Concerns" in company_data:
         st.subheader("Key Concerns")
         key_concerns = company_data["Key Concerns"]
-        st.write(key_concerns)
+        st.json(key_concerns)
 
     # Display references
     if "References" in company_data:
         st.subheader("References")
         references = company_data["References"]
-        st.write(references)
+        st.json(references)
 
 
 def display_company_news_details(company_json):
