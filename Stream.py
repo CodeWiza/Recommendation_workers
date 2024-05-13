@@ -288,11 +288,11 @@ def extract_news_information_from_text(transcript):
 
     dict_example = {
         "Company" : "Company 1",
-        "Legal Issues" : "atleast 5 big article points for Legal Issues Company ",
-        "Board Members": "Board Members of company ",
-        "Issues with Board Members": "atleast 5 key points Issues with Board Members of company ", 
+        "Legal Issues" : "atleast 5 big article points for Legal Issues Company strict in points only not in JSON",
+        "Board Members": "Board Members of company strict in points only not in JSON ",
+        "Issues with Board Members": "atleast 5 key points Issues with Board Members of company strict in points only not in json ", 
         "Financial Wrongdoing": "Financial Wrongdoing of company ",
-        "Labour Strikes": "atleast 5 key points Labour Strikes of company ",
+        "Labour Strikes": "atleast 5 key points Labour Strikes of company strict in points only not in json ",
         "References": "all link realted to company ",
     }
 
@@ -421,25 +421,25 @@ def display_company_finance_details(company_json):
     if "Financial Information" in company_data:
         st.subheader("Financial Information")
         financial_info = company_data["Financial Information"]
-        st.json(financial_info)
+        st.write(financial_info)
 
     # Display positives
     if "Positives" in company_data:
         st.subheader("Positives")
         positives = company_data["Positives"]
-        st.json(positives)
+        st.write(positives)
 
     # Display key concerns
     if "Key Concerns" in company_data:
         st.subheader("Key Concerns")
         key_concerns = company_data["Key Concerns"]
-        st.json(key_concerns)
+        st.write(key_concerns)
 
     # Display references
     if "References" in company_data:
         st.subheader("References")
         references = company_data["References"]
-        st.json(references)
+        st.write(references)
 
 
 def display_company_news_details(company_json):
