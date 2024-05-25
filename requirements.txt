@@ -9,3 +9,4 @@ chromadb
 pysqlite3-binary
 llama-index-llms-clarifai
 llama-index-llms-openai
+pycountry
