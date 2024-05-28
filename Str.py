@@ -22,8 +22,15 @@ css = f"""
         text-align: left;
     }}
 
+    hr {{
+        border: 0;
+        height: 1px;
+        background-color: #ccc;
+        margin: 20px 0;
+    }}
+
     h1 {{
-        color: #1f77b4;
+        color: #5E17EB;
         font-weight: 700;
         font-size: 48px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -89,17 +96,6 @@ css = f"""
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }}
 
-    @keyframes float {{
-        0% {{
-            transform: translateY(0);
-        }}
-        50% {{
-            transform: translateY(-10px);
-        }}
-        100% {{
-            transform: translateY(0);
-        }}
-    }}
 </style>
 """
 
@@ -171,50 +167,54 @@ if search_term:
 if search_term_main:
     search = search_term_main
 
+
+def display_social_links(social_handles):
+    if social_handles:
+        links = [f"[{platform.capitalize()}]({link})" for platform, link in social_handles.items() if link]
+        if links:
+            st.markdown(" | ".join(links), unsafe_allow_html=True)
+
 # Caching mechanism
 @st.cache_data
-def fetch_and_process_data(search):
+def process_data(search):
     supplier_data = supplier(search)
     return supplier_data
 
 @st.cache_data
-def fetch_and_process_data_data(search):
-    processed_data = details(search)
+def processing(search):
+    processed_data = details(str(search))
     return processed_data
+
 
 # Spinner implementation
 if search:
-        supplier_data = fetch_and_process_data(search)
+        supplier_data = process_data(search)
 else:
         supplier_data = None
 
 
-processed_data = None
-
 if supplier_data:
     selected_suppliers = []
     with st.expander(label="Select your supplier", expanded=True):
-        cols = st.columns([1, 3, 1.5, 1.5, 2])
-        cols[0].write("Select")
-        cols[1].write("Supplier Name")
-        cols[4].write("Invitation")
         for key, supplier in enumerate(supplier_data["Supplier_details"]):
-            checkbox_value = cols[0].checkbox("", key=key, value=key in selected_suppliers)
-            cols[1].write(supplier)
-            invitation_button = cols[4].button("Send Invite", key=f"invite_{supplier}")
-            if checkbox_value:
-                selected_suppliers.append(key)
-            elif not checkbox_value and key in selected_suppliers:
-                selected_suppliers.remove(key)
-            if invitation_button:
-                st.success(f"Invitation sent to {supplier['Company_name']}")
-
-    processed_data = fetch_and_process_data_data(supplier_data)
-    if selected_suppliers:
+            supplier_container = st.container()
+            cols = st.columns([1, 3, 1.5, 1.5, 2])
+            with supplier_container:
+                checkbox_value = cols[0].checkbox("", key=key, value=key in selected_suppliers)
+                cols[1].write(supplier)
+                #invitation_button = cols[4].button("Send Invite", key=f"invite_{key}")
+                if checkbox_value:
+                    selected_suppliers.append(key)
+                elif key in selected_suppliers:
+                    selected_suppliers.remove(key)
+                #if invitation_button:
+                   # st.success(f"Invitation sent to {supplier['Company_name']}")'''
+            #st.write("---")  # Add a horizontal line after each supplier
+    
+    selected_supplier_names = [processing(str(supplier_data["Supplier_details"][index])) for index in selected_suppliers]
+    if selected_supplier_names:
         st.subheader("Selected Suppliers")
-        for data in selected_suppliers:
-            for key, supplier in enumerate(processed_data):
-                if key == data:
+        for supplier in selected_supplier_names:
                     company_details = supplier['Company_details']
                     financial_details = supplier['Financial_details']
                     board_member_details = supplier['Board_Member_details']
@@ -247,9 +247,21 @@ if supplier_data:
                                 st.write(f"- {member}")
 
                     with st.expander("News and Additional Information"):
-                        st.write(board_member_details['News'])
-                        st.write(board_member_details['Additional_information'])
-                    st.write("---")
+                        news_items = board_member_details['News']
+                        additional_info = board_member_details['Additional_information']
+                        st.markdown("### News")
+                        for item in news_items:
+                            st.markdown(f"- {item}")
+                            
+                        st.markdown("### Additional Information")
+                        for item in additional_info:
+                            st.markdown(f"- {item}")
+                        
+                    with st.expander("Social Media Handles"):
+                        social_handles = supplier['Social_handles']['Social_details']
+                        display_social_links(social_handles)
+
+
  
 # Footer section
 footer_html = """
