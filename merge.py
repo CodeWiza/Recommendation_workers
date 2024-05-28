@@ -136,12 +136,6 @@ def run_full_search_process(prompt):
         process=Process.sequential,
         memory=True,
         full_output=True,
-        embedder={
-                "provider": "openai",
-                "config":{
-                        "model": 'text-embedding-3-small'
-                }
-        }
     )
 
     # Execute the search task
