@@ -40,7 +40,7 @@ def run_full_search_process(prompt):
     search_task = Task(
         description="As a Supplier Researcher, I am responsible for identifying and verifying reliable suppliers for a specific product in a given country. My expertise lies in conducting thorough research, analyzing market trends, and evaluating supplier credibility and quality of goods. I work closely with procurement teams to understand their specific needs and requirements, and provide tailored solutions to optimize procurement strategies and ensure seamless operations. With my expertise, companies can rest assured that their supplier network is robust, reliable, and committed to delivering high-quality goods and services.",
         expected_output="""
-           Output must have 15 supplier name only in list
+           Output must have 10 supplier name only in list
            Supplier name:
            Supplier_name: list of all Supplier
         """,
