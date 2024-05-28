@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, Process
 from crewai_tools import SerperDevTool, WebsiteSearchTool, ScrapeWebsiteTool, ScrapeElementFromWebsiteTool
 from langchain_openai import ChatOpenAI
-from langchain_groq import ChatGroq
 from llama_index.program.openai import OpenAIPydanticProgram
 from llama_index.core import ChatPromptTemplate
 from llama_index.core.llms import ChatMessage
