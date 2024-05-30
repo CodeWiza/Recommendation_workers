@@ -318,7 +318,7 @@ if supplier_data:
 
             
 
-            with st.expander("Review Data"):
+            with st.expander("Company Review"):
                 with st.form("review_form"):
                     name_supplier = company_details['Company']
                     st.write(F"Check Review for {name_supplier}")
@@ -339,6 +339,12 @@ if supplier_data:
                                 st.caption(f"Source: {review['website_source']}")
 
                         st.empty()
+            with st.expander("Scores"):
+                col1, col2 = st.columns([2, 2])
+                with col1:
+                    st.markdown('#### Financial Score :- 73%')
+                with col2:
+                    st.markdown('#### Product Review Score :- 8/10')
 
         st.write("------------------------------")
 
